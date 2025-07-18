@@ -14,7 +14,6 @@ const forecast = (latitude, longtitude, callback) => {
             callback(undefined, {
                 location: response.body.location.name,
                 temp_c: response.body.current.temp_c,
-                condition: response.body.current.condition.text,
                 longitude: longtitude,
                 latitude: latitude
             })
