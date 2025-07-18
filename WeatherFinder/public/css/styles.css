@@ -1,0 +1,83 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('/img/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Full width background bar */
+.search-bar {
+  background-color: #8b0000;
+  padding: 7px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Input short */
+.search-bar input {
+  width: 200px;
+  padding: 7px;
+  border: none;
+  color: #000;
+  outline: none;
+}
+
+.search-bar button {
+  padding: 7px 20px;
+  background-color: #fff;
+  color: #8b0000;
+  border: none;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #ccc;
+}
+
+/* Welcome Text */
+#welcome-text-container {
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+#welcome-text {
+  font-size: 14px;
+}
+
+/* Info Box Style */
+.info-box {
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Error Message */
+#error {
+  background-color: #ff4d4d;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 10px;
+  display: none;
+}
