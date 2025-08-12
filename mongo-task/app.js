@@ -67,7 +67,7 @@ async function run() {
     );
     console.log(`${result.modifiedCount} documents had name updated.\n`);
     console.log("--------------------------------------------------");
-    
+
     // Step 6: $inc age +1
     console.log("Step 6: Increment age by 1 for the same 4 docs using $inc");
     const incResult = await collection.updateMany(
@@ -78,6 +78,15 @@ async function run() {
       `${incResult.modifiedCount} documents had age incremented by 1.\n`
     );
     console.log("--------------------------------------------------");
+
+    // Step 7: updateMany +10 age
+    console.log("Step 7: Increment age by 10 for ALL documents");
+    const updateAll = await collection.updateMany({}, { $inc: { age: 10 } });
+    console.log(
+      `${updateAll.modifiedCount} documents had age increased by 10.\n`
+    );
+    console.log("--------------------------------------------------");
+    
   } catch (error) {
     console.error("Error:", error.message);
   } finally {
