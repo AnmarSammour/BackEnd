@@ -86,7 +86,12 @@ async function run() {
       `${updateAll.modifiedCount} documents had age increased by 10.\n`
     );
     console.log("--------------------------------------------------");
-    
+
+    // Step 8 & 9: deleteMany where age = 41
+    console.log("Step 8 & 9: Delete all documents where age = 41");
+    const deleteResult = await collection.deleteMany({ age: 41 });
+    console.log(`Number of deleted documents: ${deleteResult.deletedCount}\n`);
+    console.log("--------------------------------------------------");
   } catch (error) {
     console.error("Error:", error.message);
   } finally {
