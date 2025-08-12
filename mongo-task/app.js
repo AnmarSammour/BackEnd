@@ -23,6 +23,22 @@ async function run() {
     console.log("2 documents added.\n");
     console.log("--------------------------------------------------");
 
+    // Step 2: insertMany
+    console.log("Step 2: Adding 10 documents with insertMany");
+    await collection.insertMany([
+      { name: "Aref", age: 27 },
+      { name: "Mohammad", age: 27 },
+      { name: "Sam", age: 27 },
+      { name: "Tallinn", age: 27 },
+      { name: "Islam", age: 27 },
+      { name: "Khalid", age: 35 },
+      { name: "Omar", age: 40 },
+      { name: "Layan", age: 31 },
+      { name: "Tasneem", age: 31 },
+      { name: "Saad", age: 45 },
+    ]);
+    console.log("10 documents added. (5 with age 27)\n");
+    console.log("--------------------------------------------------");
   } catch (error) {
     console.error("Error:", error.message);
   } finally {
