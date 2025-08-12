@@ -47,6 +47,14 @@ async function run() {
     console.log(age27Docs);
     console.log("");
     console.log("--------------------------------------------------");
+
+    // Step 4: limit to first 3
+    console.log("Step 4: First 3 documents where age = 27");
+    const first3 = await collection.find({ age: 27 }).limit(3).toArray();
+    console.log("First 3 users:");
+    console.log(first3);
+    console.log("");
+    console.log("--------------------------------------------------");
   } catch (error) {
     console.error("Error:", error.message);
   } finally {
