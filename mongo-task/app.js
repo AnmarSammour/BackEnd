@@ -39,6 +39,14 @@ async function run() {
     ]);
     console.log("10 documents added. (5 with age 27)\n");
     console.log("--------------------------------------------------");
+
+    // Step 3: find where age = 27
+    console.log("Step 3: Finding all documents where age = 27");
+    const age27Docs = await collection.find({ age: 27 }).toArray();
+    console.log("Users with age 27:");
+    console.log(age27Docs);
+    console.log("");
+    console.log("--------------------------------------------------");
   } catch (error) {
     console.error("Error:", error.message);
   } finally {
