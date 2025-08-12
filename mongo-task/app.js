@@ -55,6 +55,18 @@ async function run() {
     console.log(first3);
     console.log("");
     console.log("--------------------------------------------------");
+    
+    // Step 5: $set update name
+    console.log("Step 5: Update name of first 4 age-27 docs using $set");
+    const docsToUpdate = await collection.find({ age: 27 }).limit(4).toArray();
+    const ids = docsToUpdate.map((doc) => doc._id);
+
+    const result = await collection.updateMany(
+      { _id: { $in: ids } },
+      { $set: { name: "Youssef" } }
+    );
+    console.log(`${result.modifiedCount} documents had name updated.\n`);
+    console.log("--------------------------------------------------");
   } catch (error) {
     console.error("Error:", error.message);
   } finally {
